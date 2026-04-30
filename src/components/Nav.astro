@@ -102,7 +102,7 @@
 	}
 
 	.hamburger.active span:nth-child(1) {
-		transform: rotate(45deg) translate(0.6rem, 0.6rem);
+		transform: translateY(calc(0.35rem + 2px)) rotate(45deg);
 	}
 
 	.hamburger.active span:nth-child(2) {
@@ -110,7 +110,7 @@
 	}
 
 	.hamburger.active span:nth-child(3) {
-		transform: rotate(-45deg) translate(0.4rem, -0.4rem);
+		transform: translateY(calc(-0.35rem - 2px)) rotate(-45deg);
 	}
 
 	/* Mobile menu overlay */
@@ -133,13 +133,15 @@
 			gap: var(--space-8);
 			opacity: 0;
 			pointer-events: none;
-			transition: opacity var(--transition-base);
+			visibility: hidden;
+			transition: opacity var(--transition-base), visibility var(--transition-base);
 			z-index: 999;
 		}
 
 		.nav-menu.active {
 			opacity: 1;
 			pointer-events: all;
+			visibility: visible;
 		}
 
 		.nav-link {

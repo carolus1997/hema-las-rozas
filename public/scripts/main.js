@@ -1,24 +1,30 @@
-// Smooth scroll for anchor links (hash-only hrefs like #section)
+// Helper: close mobile menu and unlock body scroll
+function closeMobileMenu() {
+	const hamburger = document.querySelector('.hamburger');
+	const navMenu = document.querySelector('.nav-menu');
+	if (hamburger && navMenu) {
+		hamburger.classList.remove('active');
+		navMenu.classList.remove('active');
+		hamburger.setAttribute('aria-expanded', 'false');
+		document.body.style.overflow = '';
+	}
+}
+
+// Smooth scroll for pure hash links (#section)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 	anchor.addEventListener('click', function (e) {
 		const href = this.getAttribute('href');
 		if (href !== '#' && document.querySelector(href)) {
 			e.preventDefault();
-			const target = document.querySelector(href);
-			target.scrollIntoView({ behavior: 'smooth' });
-
-			// Close mobile menu if open
-			const menu = document.querySelector('.nav-menu');
-			const btn = document.querySelector('.hamburger');
-			if (menu && menu.classList.contains('active')) {
-				menu.classList.remove('active');
-				if (btn) {
-					btn.classList.remove('active');
-					btn.setAttribute('aria-expanded', 'false');
-				}
-			}
+			document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+			closeMobileMenu();
 		}
 	});
+});
+
+// Close menu on any nav link click (handles /#hash and /page links too)
+document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+	link.addEventListener('click', closeMobileMenu);
 });
 
 // Hamburger menu toggle
@@ -30,13 +36,12 @@ if (hamburger && navMenu) {
 		const isOpen = hamburger.classList.toggle('active');
 		navMenu.classList.toggle('active');
 		hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		document.body.style.overflow = isOpen ? 'hidden' : '';
 	});
 
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= 768) {
-			hamburger.classList.remove('active');
-			navMenu.classList.remove('active');
-			hamburger.setAttribute('aria-expanded', 'false');
+			closeMobileMenu();
 		}
 	}, { passive: true });
 }
@@ -44,7 +49,6 @@ if (hamburger && navMenu) {
 // Nav darkens on scroll
 const nav = document.querySelector('.nav');
 if (nav) {
-	// Apply correct state immediately on load (handles direct hash links)
 	if (window.scrollY > 80) nav.classList.add('scrolled');
 
 	window.addEventListener('scroll', () => {
