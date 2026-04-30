@@ -1,4 +1,23 @@
-// Helper: close mobile menu and unlock body scroll
+// iOS-safe scroll lock: fix body at current scroll position
+function lockBodyScroll() {
+	const scrollY = window.scrollY;
+	document.body.style.position = 'fixed';
+	document.body.style.top = `-${scrollY}px`;
+	document.body.style.left = '0';
+	document.body.style.right = '0';
+	document.body.dataset.menuScrollY = scrollY;
+}
+
+function unlockBodyScroll() {
+	const scrollY = parseInt(document.body.dataset.menuScrollY || '0');
+	document.body.style.position = '';
+	document.body.style.top = '';
+	document.body.style.left = '';
+	document.body.style.right = '';
+	window.scrollTo(0, scrollY);
+	delete document.body.dataset.menuScrollY;
+}
+
 function closeMobileMenu() {
 	const hamburger = document.querySelector('.hamburger');
 	const navMenu = document.querySelector('.nav-menu');
@@ -6,7 +25,7 @@ function closeMobileMenu() {
 		hamburger.classList.remove('active');
 		navMenu.classList.remove('active');
 		hamburger.setAttribute('aria-expanded', 'false');
-		document.body.style.overflow = '';
+		unlockBodyScroll();
 	}
 }
 
@@ -36,7 +55,11 @@ if (hamburger && navMenu) {
 		const isOpen = hamburger.classList.toggle('active');
 		navMenu.classList.toggle('active');
 		hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-		document.body.style.overflow = isOpen ? 'hidden' : '';
+		if (isOpen) {
+			lockBodyScroll();
+		} else {
+			unlockBodyScroll();
+		}
 	});
 
 	window.addEventListener('resize', () => {
