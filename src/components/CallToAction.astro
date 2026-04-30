@@ -1,0 +1,85 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+	label?: string;
+}
+
+const { title, body, href, label = 'Contáctame' } = Astro.props;
+---
+
+<section class="cta-section">
+	<div class="cta-container">
+		<h2>{title}</h2>
+		<p>{body}</p>
+		<a href={href} class="cta-button">{label}</a>
+	</div>
+</section>
+
+<style>
+	.cta-section {
+		background: linear-gradient(135deg, #0E0E0E 0%, #111111 100%);
+		padding: var(--space-16) var(--space-4);
+		border-top: var(--border-thin);
+		border-bottom: var(--border-thin);
+	}
+
+	.cta-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.cta-container h2 {
+		font-size: var(--font-size-3xl);
+		margin-bottom: var(--space-4);
+		color: var(--color-ink);
+	}
+
+	.cta-container p {
+		font-size: var(--font-size-lg);
+		color: var(--color-ink-muted);
+		max-width: 800px;
+		margin: 0 auto var(--space-8);
+		line-height: 1.8;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: var(--space-3) var(--space-8);
+		background-color: var(--color-accent);
+		color: var(--color-ink);
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-size: var(--font-size-base);
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		border: 2px solid var(--color-accent);
+		border-radius: var(--border-radius);
+		transition: all var(--transition-base);
+		cursor: pointer;
+	}
+
+	.cta-button:hover {
+		background-color: var(--color-accent-light);
+		border-color: var(--color-accent-light);
+		box-shadow: 0 12px 32px rgba(196, 18, 48, 0.3);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 767px) {
+		.cta-section {
+			padding: var(--space-12) var(--space-3);
+		}
+
+		.cta-container h2 {
+			font-size: var(--font-size-2xl);
+		}
+
+		.cta-container p {
+			font-size: var(--font-size-base);
+		}
+	}
+</style>

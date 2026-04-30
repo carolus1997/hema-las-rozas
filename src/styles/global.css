@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
 :root {
-	/* === PALETTE === */
-	--color-bg:           #F5F0E8;
-	--color-bg-alt:       #EDE6D6;
-	--color-surface:      #FBF8F2;
-	--color-ink:          #1A1008;
-	--color-ink-muted:    #4A3728;
-	--color-accent:       #7B1F2E;
-	--color-accent-light: #9E3040;
-	--color-gold:         #C4A84A;
-	--color-gold-muted:   #A8893A;
+	/* === DARK PALETTE === */
+	--color-bg:           #080808;
+	--color-bg-alt:       #0E0E0E;
+	--color-surface:      #141414;
+	--color-surface-hover: #1C1C1C;
+	--color-border:       #1E1E1E;
+	--color-ink:          #F0EDE8;
+	--color-ink-muted:    #6B6560;
+	--color-accent:       #C41230;
+	--color-accent-light: #E01535;
+	--color-gold:         #BF9B30;
+	--color-gold-muted:   #8A7020;
 
 	/* === TYPOGRAPHY === */
 	--font-heading: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
@@ -24,9 +26,10 @@
 	--font-size-xl:   1.75rem;
 	--font-size-2xl:  2.25rem;
 	--font-size-3xl:  3rem;
-	--font-size-hero: clamp(2.5rem, 6vw, 5rem);
+	--font-size-4xl:  4rem;
+	--font-size-hero: clamp(3.5rem, 8vw, 6rem);
 
-	/* === SPACING (8-point scale) === */
+	/* === SPACING === */
 	--space-1:  0.5rem;
 	--space-2:  1rem;
 	--space-3:  1.5rem;
@@ -40,7 +43,7 @@
 	--max-width:        1100px;
 	--section-padding:  var(--space-12) var(--space-4);
 	--border-radius:    2px;
-	--border-thin:      1px solid var(--color-gold-muted);
+	--border-thin:      1px solid var(--color-border);
 	--border-thick:     3px solid var(--color-accent);
 
 	/* === ANIMATION === */
@@ -65,26 +68,13 @@ html {
 body {
 	line-height: 1.6;
 	background-color: var(--color-bg);
-	background-image:
-		repeating-linear-gradient(
-			15deg,
-			transparent,
-			transparent 2px,
-			rgba(106, 90, 75, 0.02) 2px,
-			rgba(106, 90, 75, 0.02) 4px
-		),
-		radial-gradient(
-			ellipse at center,
-			transparent 0%,
-			rgba(0, 0, 0, 0.03) 100%
-		);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-heading);
 	font-weight: 400;
 	color: var(--color-ink);
-	line-height: 1.2;
+	line-height: 1.1;
 	margin-bottom: var(--space-3);
 }
 
@@ -95,22 +85,9 @@ h1 {
 }
 
 h2 {
-	font-size: var(--font-size-3xl);
+	font-size: var(--font-size-4xl);
 	font-weight: 400;
-	color: var(--color-accent);
-	position: relative;
-	padding: var(--space-4) 0;
-}
-
-h2::before,
-h2::after {
-	content: '';
-	display: inline-block;
-	width: 3rem;
-	height: 1px;
-	background: var(--color-gold);
-	vertical-align: middle;
-	margin: 0 var(--space-2);
+	margin-bottom: var(--space-4);
 }
 
 h3 {
@@ -118,9 +95,15 @@ h3 {
 	font-weight: 600;
 }
 
+h4 {
+	font-size: var(--font-size-lg);
+	font-weight: 600;
+}
+
 p {
 	margin-bottom: var(--space-3);
 	font-size: var(--font-size-base);
+	line-height: 1.7;
 }
 
 a {
@@ -150,28 +133,6 @@ section:nth-child(even) {
 	background-color: var(--color-bg-alt);
 }
 
-/* Max-width container for prose */
-.prose {
-	max-width: 65ch;
-	margin: 0 auto;
-}
-
-/* Grid layout */
-.grid {
-	display: grid;
-	gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-	.grid-2 {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	.grid-3 {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 /* Utilities */
 .text-center {
 	text-align: center;
@@ -182,8 +143,15 @@ section:nth-child(even) {
 	font-size: var(--font-size-sm);
 }
 
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
 .mb-0 { margin-bottom: 0; }
 .mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
 .mb-4 { margin-bottom: var(--space-4); }
 .mb-6 { margin-bottom: var(--space-6); }
 

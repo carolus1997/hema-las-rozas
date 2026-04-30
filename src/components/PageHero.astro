@@ -1,0 +1,94 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+	tag?: string;
+}
+
+const { title, subtitle, tag } = Astro.props;
+---
+
+<section class="page-hero">
+	{tag && <div class="page-tag">{tag}</div>}
+	<div class="page-hero-content">
+		<h1 class="page-title">{title}</h1>
+		{subtitle && <p class="page-subtitle">{subtitle}</p>}
+		<nav class="breadcrumb">
+			<a href="/">Inicio</a>
+			<span>/</span>
+			<span>{title}</span>
+		</nav>
+	</div>
+</section>
+
+<style>
+	.page-hero {
+		min-height: 40vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-12) var(--space-4);
+		background-color: var(--color-bg);
+		border-bottom: var(--border-thin);
+		margin-top: 4rem;
+	}
+
+	.page-hero-content {
+		max-width: var(--max-width);
+		text-align: center;
+	}
+
+	.page-tag {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-xs);
+		color: var(--color-accent);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		margin-bottom: var(--space-3);
+		font-weight: 600;
+	}
+
+	.page-title {
+		font-size: var(--font-size-4xl);
+		margin-bottom: var(--space-4);
+	}
+
+	.page-subtitle {
+		font-size: var(--font-size-lg);
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-6);
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.breadcrumb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: var(--font-size-sm);
+		color: var(--color-ink-muted);
+	}
+
+	.breadcrumb a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 767px) {
+		.page-hero {
+			min-height: 30vh;
+			padding: var(--space-8) var(--space-3);
+			margin-top: 3rem;
+		}
+
+		.page-title {
+			font-size: var(--font-size-3xl);
+		}
+	}
+</style>

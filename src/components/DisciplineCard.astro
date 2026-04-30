@@ -6,9 +6,10 @@ interface Props {
 	description: string;
 	why: string;
 	icon: string;
+	href?: string;
 }
 
-const { title, period, tradition, description, why, icon } = Astro.props;
+const { title, period, tradition, description, why, icon, href } = Astro.props;
 ---
 
 <div class="discipline-card">
@@ -28,6 +29,10 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 	<p class="card-description">{description}</p>
 
 	<p class="card-why"><em>{why}</em></p>
+
+	{href && (
+		<a href={href} class="card-link">Aprender más →</a>
+	)}
 </div>
 
 <style>
@@ -45,8 +50,9 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 	}
 
 	.discipline-card:hover {
-		transform: translateY(-0.25rem);
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		transform: translateY(-6px);
+		background-color: var(--color-surface-hover);
+		box-shadow: 0 12px 32px rgba(196, 18, 48, 0.15);
 	}
 
 	.card-header {
@@ -56,16 +62,16 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 	}
 
 	.card-icon {
-		color: var(--color-gold);
-		width: 3rem;
-		height: 3rem;
+		color: var(--color-accent);
+		width: 3.5rem;
+		height: 3.5rem;
 	}
 
 	.card-title {
 		font-family: var(--font-heading);
-		font-size: var(--font-size-lg);
-		color: var(--color-accent);
-		font-weight: 600;
+		font-size: var(--font-size-2xl);
+		color: var(--color-ink);
+		font-weight: 400;
 		margin-bottom: var(--space-2);
 	}
 
@@ -79,14 +85,15 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 
 	.period-badge {
 		display: inline-block;
-		background-color: var(--color-gold);
-		color: var(--color-bg);
+		background-color: rgba(196, 18, 48, 0.2);
+		color: var(--color-accent);
 		padding: 0.25rem var(--space-2);
 		border-radius: 999px;
 		font-size: var(--font-size-xs);
 		font-weight: 600;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
+		border: 1px solid rgba(196, 18, 48, 0.4);
 	}
 
 	.tradition-label {
@@ -109,15 +116,30 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 		color: var(--color-ink-muted);
 		font-style: italic;
 		line-height: 1.5;
-		margin-bottom: 0;
-		border-top: 1px solid var(--color-gold-muted);
+		margin-bottom: var(--space-2);
+		border-top: var(--border-thin);
 		padding-top: var(--space-3);
 	}
 
 	.card-why em {
 		font-style: normal;
-		color: var(--color-accent);
+		color: var(--color-gold);
 		font-weight: 500;
+	}
+
+	.card-link {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-sm);
+		color: var(--color-accent);
+		text-decoration: none;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		transition: color var(--transition-base);
+		margin-top: auto;
+	}
+
+	.card-link:hover {
+		color: var(--color-accent-light);
 	}
 
 	@media (max-width: 767px) {
@@ -126,8 +148,8 @@ const { title, period, tradition, description, why, icon } = Astro.props;
 		}
 
 		.card-icon {
-			width: 2.5rem;
-			height: 2.5rem;
+			width: 3rem;
+			height: 3rem;
 		}
 	}
 </style>

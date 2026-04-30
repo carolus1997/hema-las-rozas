@@ -2,40 +2,24 @@
 ---
 
 <section id="inicio" class="hero">
-	<div class="hero-inner">
-		<div class="hero-content">
-			<h1 class="hero-title">HEMA Las Rozas</h1>
+	<div class="hero-overlay"></div>
+	<div class="hero-content">
+		<div class="hero-tag">Artes Marciales Históricas Europeas</div>
+		<h1 class="hero-title">HEMA Las Rozas</h1>
 
-			<div class="hero-divider">
-				<span class="hero-divider-line"></span>
-				<span class="hero-divider-ornament">◆</span>
-				<span class="hero-divider-line"></span>
-			</div>
-
-			<p class="hero-subtitle">Arte Marcial Histórica Europea</p>
-
-			<p class="hero-disciplines">
-				Espada Larga · Ropera · Daga de Rodela
-			</p>
-
-			<p class="hero-location">Las Rozas de Madrid</p>
-
-			<a href="#unete" class="cta-button">Únete al equipo</a>
+		<div class="hero-divider">
+			<span class="hero-line"></span>
+			<span class="hero-ornament">◆</span>
+			<span class="hero-line"></span>
 		</div>
 
-		<figure class="hero-image-wrap">
-			<img
-				src="/images/meyer-longsword.jpg"
-				alt="Grabado de combatientes con espada larga, de El Arte del Combate de Joachim Meyer (1570)"
-				class="hero-image"
-				width="1024"
-				height="686"
-				loading="eager"
-			/>
-			<figcaption class="hero-image-caption">
-				Joachim Meyer · <em>El Arte del Combate</em> · 1570
-			</figcaption>
-		</figure>
+		<p class="hero-subtitle">Espada Larga · Ropera · Daga de Rodela</p>
+		<p class="hero-location">Las Rozas de Madrid</p>
+
+		<div class="hero-ctas">
+			<a href="#unete" class="btn btn-primary">Únete al equipo</a>
+			<a href="/teoria" class="btn btn-secondary">Conoce las HEMA</a>
+		</div>
 	</div>
 </section>
 
@@ -44,59 +28,82 @@
 		min-height: 100svh;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		position: relative;
 		padding: var(--space-8) var(--space-4);
+		background-image: url('/images/meyer-longsword.jpg');
+		background-size: cover;
+		background-position: center 20%;
+		background-attachment: fixed;
 		overflow: hidden;
 	}
 
-	.hero-inner {
-		max-width: var(--max-width);
-		margin: 0 auto;
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: var(--space-8);
-		align-items: center;
-	}
-
-	@media (min-width: 768px) {
-		.hero-inner {
-			grid-template-columns: 1fr 1fr;
-			gap: var(--space-12);
+	@media (max-width: 767px) {
+		.hero {
+			background-attachment: scroll;
+			padding-top: 6rem;
+			min-height: auto;
 		}
 	}
 
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.70) 0%,
+			rgba(0, 0, 0, 0.55) 40%,
+			rgba(0, 0, 0, 0.85) 100%
+		);
+		z-index: 1;
+	}
+
 	.hero-content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		max-width: 900px;
 		animation: fadeInUp 1s ease forwards;
+	}
+
+	.hero-tag {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-xs);
+		color: var(--color-accent);
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		margin-bottom: var(--space-4);
+		font-weight: 600;
 	}
 
 	.hero-title {
 		font-size: var(--font-size-hero);
 		font-weight: 300;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.03em;
 		color: var(--color-ink);
 		margin-bottom: var(--space-6);
-		line-height: 1.1;
+		line-height: 1.05;
 	}
 
 	.hero-divider {
 		display: flex;
+		justify-content: center;
 		align-items: center;
 		gap: var(--space-3);
 		margin-bottom: var(--space-6);
-		height: 2rem;
+		height: 1.5rem;
 	}
 
-	.hero-divider-line {
+	.hero-line {
 		display: block;
-		width: 3rem;
+		width: 4rem;
 		height: 1px;
 		background-color: var(--color-gold);
 	}
 
-	.hero-divider-ornament {
+	.hero-ornament {
 		display: block;
-		font-size: var(--font-size-xl);
+		font-size: var(--font-size-lg);
 		color: var(--color-gold);
 		font-weight: bold;
 		line-height: 1;
@@ -104,18 +111,9 @@
 
 	.hero-subtitle {
 		font-family: var(--font-heading);
-		font-size: var(--font-size-2xl);
-		font-weight: 400;
-		color: var(--color-accent);
-		margin-bottom: var(--space-4);
-		letter-spacing: 0.05em;
-	}
-
-	.hero-disciplines {
-		font-family: var(--font-heading);
 		font-size: var(--font-size-lg);
 		color: var(--color-ink);
-		margin-bottom: var(--space-3);
+		margin-bottom: var(--space-2);
 		font-weight: 300;
 		letter-spacing: 0.03em;
 	}
@@ -127,85 +125,58 @@
 		font-weight: 300;
 	}
 
-	.cta-button {
-		display: inline-block;
+	.hero-ctas {
+		display: flex;
+		gap: var(--space-4);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn {
 		padding: var(--space-3) var(--space-6);
-		background-color: transparent;
-		border: 2px solid var(--color-accent);
-		color: var(--color-accent);
-		text-decoration: none;
 		font-family: var(--font-heading);
 		font-size: var(--font-size-base);
 		font-weight: 500;
 		letter-spacing: 0.05em;
+		text-decoration: none;
 		cursor: pointer;
-		transition: all var(--transition-base);
 		border-radius: var(--border-radius);
+		transition: all var(--transition-base);
+		display: inline-block;
+		text-transform: uppercase;
 	}
 
-	.cta-button:hover {
+	.btn-primary {
 		background-color: var(--color-accent);
-		color: var(--color-surface);
+		color: var(--color-ink);
+		border: 2px solid var(--color-accent);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--color-accent-light);
 		border-color: var(--color-accent-light);
-		box-shadow: 0 4px 12px rgba(123, 31, 46, 0.2);
+		box-shadow: 0 8px 24px rgba(196, 18, 48, 0.4);
+		transform: translateY(-2px);
 	}
 
-	/* Image column */
-	.hero-image-wrap {
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		animation: fadeInUp 1.2s ease forwards;
-		border: var(--border-thin);
-		background-color: var(--color-surface);
-		padding: var(--space-2);
+	.btn-secondary {
+		background-color: transparent;
+		color: var(--color-ink);
+		border: 2px solid var(--color-ink);
 	}
 
-	.hero-image {
-		width: 100%;
-		height: auto;
-		display: block;
-		filter: sepia(15%) contrast(1.05);
-	}
-
-	.hero-image-caption {
-		font-family: var(--font-heading);
-		font-size: var(--font-size-xs);
-		color: var(--color-ink-muted);
-		font-style: normal;
-		text-align: center;
-		padding: var(--space-2) 0 var(--space-1);
-		letter-spacing: 0.03em;
-	}
-
-	.hero-image-caption em {
-		font-style: italic;
-	}
-
-	/* Mobile: image goes below text */
-	@media (max-width: 767px) {
-		.hero {
-			padding: var(--space-6) var(--space-3);
-		}
-
-		.hero-image-wrap {
-			order: -1;
-			max-height: 280px;
-			overflow: hidden;
-		}
-
-		.hero-image {
-			object-fit: cover;
-			object-position: top;
-			max-height: 260px;
-		}
+	.btn-secondary:hover {
+		background-color: var(--color-ink);
+		color: var(--color-bg);
+		border-color: var(--color-ink);
+		box-shadow: 0 8px 24px rgba(240, 237, 232, 0.15);
+		transform: translateY(-2px);
 	}
 
 	@keyframes fadeInUp {
 		from {
 			opacity: 0;
-			transform: translateY(2rem);
+			transform: translateY(3rem);
 		}
 		to {
 			opacity: 1;

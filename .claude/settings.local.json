@@ -19,7 +19,16 @@
       "PowerShell(python -c $pyScript)",
       "Bash(mkdir -p public/images)",
       "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Okanaga-Combat-Guild-Martial-Arts-Kelowna-The-Art-of-Combat-Joachim-Meyer-Longsword-1.jpg\" public/images/meyer-longsword.jpg)",
-      "Bash(git commit -m 'Add Meyer woodcut image and enrich HEMA content *)"
+      "Bash(git commit -m 'Add Meyer woodcut image and enrich HEMA content *)",
+      "Bash(python3 *)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(netstat -ano)",
+      "Bash(curl -s http://localhost:4325/)",
+      "Bash(curl -s http://localhost:4325/teoria)",
+      "Bash(curl -s http://localhost:4325/espada-larga)",
+      "Bash(curl -s http://localhost:4325/ropera)",
+      "Bash(curl -s http://localhost:4325/daga-de-rodela)",
+      "Bash(git commit *)"
     ]
   }
 }
