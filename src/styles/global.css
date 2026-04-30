@@ -188,3 +188,30 @@ section:nth-child(even) {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.video-embed {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	margin: var(--space-8) 0;
+	background-color: var(--color-surface);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+}
+
+.video-embed iframe {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.video-caption {
+	font-size: var(--font-size-sm);
+	color: var(--color-ink-muted);
+	font-style: italic;
+	text-align: center;
+	margin-top: calc(var(--space-2) * -1);
+	margin-bottom: var(--space-8);
+}
