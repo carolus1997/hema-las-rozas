@@ -10,8 +10,9 @@
 				¿Tienes curiosidad? ¿Quieres unirte al equipo? <strong>Escríbeme</strong> — respondo en 24–48 horas. Sin compromiso.
 			</p>
 
-			<form name="contacto" method="POST" class="contacto-form" netlify>
+			<form name="contacto" method="POST" class="contacto-form" netlify netlify-honeypot="bot-field">
 				<input type="hidden" name="form-name" value="contacto" />
+				<p style="display:none"><label>No rellenes: <input name="bot-field" /></label></p>
 
 				<div class="form-group">
 					<label for="nombre" class="form-label">Nombre *</label>

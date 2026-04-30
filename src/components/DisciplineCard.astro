@@ -14,7 +14,7 @@ const { title, period, tradition, description, why, icon, href } = Astro.props;
 
 <div class="discipline-card">
 	<div class="card-header">
-		<svg class="card-icon" viewBox="0 0 100 100" width="48" height="48">
+		<svg class="card-icon" viewBox="0 0 100 100" width="48" height="48" aria-hidden="true">
 			<use href={`#${icon}`}></use>
 		</svg>
 	</div>

@@ -28,7 +28,8 @@
       "Bash(curl -s http://localhost:4325/espada-larga)",
       "Bash(curl -s http://localhost:4325/ropera)",
       "Bash(curl -s http://localhost:4325/daga-de-rodela)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(gh repo *)"
     ]
   }
 }

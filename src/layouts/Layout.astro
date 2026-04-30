@@ -32,9 +32,12 @@ const { title = 'HEMA Las Rozas', description = 'Artes Marciales Históricas Eur
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="HEMA Las Rozas" />
+		<meta property="og:image" content="https://hemalasrozas.netlify.app/images/meyer-longsword.jpg" />
+		<meta property="og:url" content={Astro.url} />
+		<link rel="canonical" href={Astro.url} />
 
 		<!-- Weapon icons as SVG symbols (referenced via <use>) -->
-		<svg style="display: none;">
+		<svg style="display: none;" aria-hidden="true">
 			<defs>
 				<!-- Crossed swords for longsword -->
 				<symbol id="icon-longsword" viewBox="0 0 100 100">
@@ -65,7 +68,7 @@ const { title = 'HEMA Las Rozas', description = 'Artes Marciales Históricas Eur
 			<slot />
 		</main>
 		<Footer />
-		<script defer src="../scripts/main.js"></script>
+		<script defer src="/scripts/main.js"></script>
 	</body>
 </html>
 

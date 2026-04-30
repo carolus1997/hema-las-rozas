@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Página no encontrada | HEMA Las Rozas"
+	description="La página que buscas no existe."
+>
+	<section class="not-found">
+		<div class="not-found-content">
+			<div class="not-found-tag">404</div>
+			<h1>Página no encontrada</h1>
+			<div class="divider"></div>
+			<p>La página que buscas no existe o ha sido movida.</p>
+			<div class="not-found-links">
+				<a href="/" class="btn-primary">Volver al inicio</a>
+				<a href="/teoria" class="btn-secondary">Ver Teoría</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.not-found {
+		min-height: 100svh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-8) var(--space-4);
+		background-color: var(--color-bg);
+		margin-top: 4rem;
+	}
+
+	.not-found-content {
+		text-align: center;
+		max-width: 480px;
+	}
+
+	.not-found-tag {
+		font-family: var(--font-heading);
+		font-size: clamp(5rem, 15vw, 9rem);
+		font-weight: 300;
+		color: var(--color-accent);
+		line-height: 1;
+		margin-bottom: var(--space-4);
+		letter-spacing: -0.02em;
+	}
+
+	h1 {
+		font-size: var(--font-size-2xl);
+		margin-bottom: var(--space-4);
+	}
+
+	.divider {
+		width: 3rem;
+		height: 1px;
+		background-color: var(--color-gold);
+		margin: 0 auto var(--space-6);
+	}
+
+	p {
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-8);
+		font-size: var(--font-size-lg);
+	}
+
+	.not-found-links {
+		display: flex;
+		gap: var(--space-4);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn-primary {
+		display: inline-block;
+		padding: var(--space-3) var(--space-6);
+		background-color: var(--color-accent);
+		color: var(--color-ink);
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		border: 2px solid var(--color-accent);
+		border-radius: var(--border-radius);
+		transition: all var(--transition-base);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--color-accent-light);
+		border-color: var(--color-accent-light);
+	}
+
+	.btn-secondary {
+		display: inline-block;
+		padding: var(--space-3) var(--space-6);
+		background-color: transparent;
+		color: var(--color-ink);
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		border: 2px solid var(--color-border);
+		border-radius: var(--border-radius);
+		transition: all var(--transition-base);
+	}
+
+	.btn-secondary:hover {
+		border-color: var(--color-ink-muted);
+		color: var(--color-ink);
+	}
+</style>
