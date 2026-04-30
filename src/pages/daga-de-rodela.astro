@@ -180,6 +180,39 @@ import CallToAction from '../components/CallToAction.astro';
 				<p>
 					Independientemente de por dónde empieces, la profundidad del sistema es la misma: comprender cómo tu cuerpo, tu arma y la del oponente interactúan en el tiempo y el espacio, bajo los principios documentados hace más de 600 años por un maestro que dedicó su vida al arte del combate.
 				</p>
+
+				<h2>Técnicas en el Opus Amplissimum — Mair</h2>
+				<p>
+					Paulus Hector Mair documentó el combate con daga en 38 secuencias ilustradas en su <em>Opus Amplissimum de Arte Athletica</em> (c. 1540). Su enfoque complementa al de Fiore: mientras que Fiore enfatiza el Gioco Stretto (el control del brazo), Mair muestra aplicaciones directas a combates con armadura y proyecciones más elaboradas.
+				</p>
+
+				<div class="plancha-section">
+					<p class="plancha-intro">
+						El <em>Opus Amplissimum de Arte Athletica</em> de Paulus Hector Mair (c. 1540) documenta 38 técnicas de daga en ilustraciones detalladas.
+					</p>
+					<div class="plancha-gallery plancha-gallery--two">
+						<figure class="plancha">
+							<div class="plancha-img-wrapper">
+								<img src="/images/mair/mair-dagger-14.jpg"
+									 alt="Técnica de daga — Mair, c. 1540, plancha 14" loading="lazy" />
+							</div>
+							<figcaption>
+								<span class="plancha-title">Técnica de Daga — XIV</span>
+								<span class="plancha-sub">Opus Amplissimum · Mair, c. 1540</span>
+							</figcaption>
+						</figure>
+						<figure class="plancha">
+							<div class="plancha-img-wrapper">
+								<img src="/images/mair/mair-dagger-35.jpg"
+									 alt="Técnica de daga — Mair, c. 1540, plancha 35" loading="lazy" />
+							</div>
+							<figcaption>
+								<span class="plancha-title">Técnica de Daga — XXXV</span>
+								<span class="plancha-sub">Opus Amplissimum · Mair, c. 1540</span>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
 			</article>
 		</div>
 	</section>
@@ -315,6 +348,78 @@ import CallToAction from '../components/CallToAction.astro';
 		margin-bottom: 0;
 	}
 
+	.plancha-section {
+		margin: var(--space-12) 0;
+	}
+
+	.plancha-intro {
+		font-size: var(--font-size-sm);
+		color: var(--color-ink-muted);
+		text-align: center;
+		margin-bottom: var(--space-6);
+		font-style: italic;
+	}
+
+	.plancha-gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--space-6);
+		margin: var(--space-8) 0;
+	}
+
+	.plancha-gallery--two {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.plancha {
+		position: relative;
+		overflow: hidden;
+		border-radius: var(--border-radius);
+		background-color: var(--color-surface);
+	}
+
+	.plancha-img-wrapper {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		aspect-ratio: 3/4;
+	}
+
+	.plancha-img-wrapper img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+		filter: contrast(1.05) brightness(0.85);
+		transition: transform 0.4s ease;
+	}
+
+	.plancha:hover .plancha-img-wrapper img {
+		transform: scale(1.05);
+	}
+
+	figcaption {
+		padding: var(--space-4);
+		background-color: var(--color-surface);
+	}
+
+	.plancha-title {
+		display: block;
+		color: var(--color-gold);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-base);
+		font-weight: 500;
+		margin-bottom: var(--space-2);
+	}
+
+	.plancha-sub {
+		display: block;
+		font-size: var(--font-size-xs);
+		color: var(--color-ink-muted);
+		font-style: italic;
+	}
+
 	@media (max-width: 767px) {
 		.section-content {
 			padding: var(--space-8) var(--space-3);
@@ -323,6 +428,11 @@ import CallToAction from '../components/CallToAction.astro';
 		.weapon-cards,
 		.sistema-grid,
 		.traditions-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.plancha-gallery,
+		.plancha-gallery--two {
 			grid-template-columns: 1fr;
 		}
 	}
