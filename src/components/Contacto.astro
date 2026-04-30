@@ -1,0 +1,191 @@
+---
+---
+
+<section id="contacto" class="contacto">
+	<div class="section-container">
+		<h2>Contacto</h2>
+
+		<div class="contacto-content">
+			<p class="contacto-intro">
+				¿Tienes curiosidad? ¿Quieres unirte al equipo? <strong>Escríbeme</strong> — respondo en 24–48 horas. Sin compromiso.
+			</p>
+
+			<form name="contacto" method="POST" class="contacto-form" netlify>
+				<input type="hidden" name="form-name" value="contacto" />
+
+				<div class="form-group">
+					<label for="nombre" class="form-label">Nombre *</label>
+					<input
+						type="text"
+						id="nombre"
+						name="nombre"
+						class="form-input"
+						required
+						placeholder="Tu nombre completo"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="email" class="form-label">Email *</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="form-input"
+						required
+						placeholder="tu@email.com"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label for="mensaje" class="form-label">Mensaje *</label>
+					<textarea
+						id="mensaje"
+						name="mensaje"
+						class="form-input form-textarea"
+						rows="6"
+						required
+						placeholder="Cuéntame sobre ti. ¿Por qué quieres entrenar HEMA? ¿Qué espada te interesa?"
+					></textarea>
+				</div>
+
+				<button type="submit" class="form-submit">Enviar</button>
+			</form>
+
+			<p class="form-note">
+				¿Prefieres contactar por email directamente? <a href="mailto:charlyp1397@gmail.com">charlyp1397@gmail.com</a>
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contacto {
+		background-color: var(--color-bg-alt);
+	}
+
+	.section-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--section-padding);
+	}
+
+	.contacto-content {
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	.contacto-intro {
+		text-align: center;
+		font-size: var(--font-size-base);
+		margin-bottom: var(--space-8);
+		line-height: 1.6;
+	}
+
+	.contacto-intro strong {
+		color: var(--color-accent);
+		font-weight: 600;
+	}
+
+	.contacto-form {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		margin-bottom: var(--space-6);
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.form-label {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-sm);
+		color: var(--color-ink);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.form-input {
+		background-color: var(--color-surface);
+		border: none;
+		border-bottom: 2px solid var(--color-gold);
+		padding: var(--space-2) var(--space-2);
+		font-family: var(--font-body);
+		font-size: var(--font-size-base);
+		color: var(--color-ink);
+		transition: border-color var(--transition-base);
+		outline: none;
+		border-radius: 0;
+	}
+
+	.form-input::placeholder {
+		color: var(--color-ink-muted);
+	}
+
+	.form-input:focus {
+		border-bottom-color: var(--color-accent);
+		background-color: rgba(196, 168, 74, 0.05);
+	}
+
+	.form-textarea {
+		resize: vertical;
+		min-height: 150px;
+		font-family: var(--font-body);
+	}
+
+	.form-submit {
+		background-color: transparent;
+		border: 2px solid var(--color-accent);
+		color: var(--color-accent);
+		padding: var(--space-3) var(--space-6);
+		font-family: var(--font-heading);
+		font-size: var(--font-size-base);
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		transition: all var(--transition-base);
+		border-radius: var(--border-radius);
+		text-transform: uppercase;
+	}
+
+	.form-submit:hover {
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		border-color: var(--color-accent-light);
+		box-shadow: 0 4px 12px rgba(123, 31, 46, 0.2);
+	}
+
+	.form-submit:active {
+		transform: translateY(1px);
+	}
+
+	.form-note {
+		text-align: center;
+		font-size: var(--font-size-sm);
+		color: var(--color-ink-muted);
+	}
+
+	.form-note a {
+		color: var(--color-accent);
+		font-weight: 500;
+		text-decoration: underline;
+	}
+
+	.form-note a:hover {
+		color: var(--color-accent-light);
+	}
+
+	@media (max-width: 767px) {
+		.section-container {
+			padding: var(--space-8) var(--space-3);
+		}
+
+		.contacto-content {
+			padding: 0 var(--space-2);
+		}
+	}
+</style>

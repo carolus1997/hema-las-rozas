@@ -1,0 +1,69 @@
+---
+import DisciplineCard from './DisciplineCard.astro';
+---
+
+<section id="armas" class="armas-estilos">
+	<div class="section-container">
+		<h2>Armas y Estilos</h2>
+
+		<div class="disciplines-grid">
+			<DisciplineCard
+				title="Espada Larga"
+				period="Siglos XIV–XVI"
+				tradition="Escuela alemana e italiana"
+				description="La espada larga es el arma maestra de las HEMA. Con una hoja de 90–110 cm empuñada a dos manos, permite cortes amplios, estocadas y técnicas de Halbschwert (media espada) en distancias cortas. Es el punto de entrada ideal para nuevos practicantes."
+				why="Desarrolla la mecánica corporal fundamental — postura, generación de potencia, distancia, y el concepto de Zufechten (aproximación) que subyace en todas las armas."
+				icon="icon-longsword"
+			/>
+
+			<DisciplineCard
+				title="Ropera"
+				period="Siglos XVI–XVII"
+				tradition="Destreza española"
+				description="La ropera es la espada civil por excelencia del Renacimiento tardío. Hoja larga y orientada al juego de punto, con énfasis en la geometría corporal (la Destreza), los ángulos y la economía de movimiento. El estilo español es especialmente rico en teoría."
+				why="La Destreza española es patrimonio nuestro. Entrenarla conecta directamente con la tradición marcial ibérica documentada en Madrid, Salamanca y Sevilla durante el Siglo de Oro."
+				icon="icon-rapier"
+			/>
+
+			<DisciplineCard
+				title="Daga y Rodela"
+				period="Siglos XIV–XVI"
+				tradition="I.33, Fiore, Talhoffer"
+				description="La combinación de daga y rodela (escudo pequeño) representa el combate a corta distancia. La rodela activa — que bloquea, desvía y golpea — añade una dimensión táctica única ausente en el combate solo con espada."
+				why="Un arma secundaria perfecta para desarrollar el juego de guardia, la economía defensiva y la conciencia espacial a distancias cortas. Complementa directamente el entrenamiento de espada larga."
+				icon="icon-shield"
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	.armas-estilos {
+		background-color: var(--color-bg);
+	}
+
+	.section-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--section-padding);
+	}
+
+	.disciplines-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin-top: var(--space-6);
+	}
+
+	@media (min-width: 768px) {
+		.disciplines-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 767px) {
+		.section-container {
+			padding: var(--space-8) var(--space-3);
+		}
+	}
+</style>

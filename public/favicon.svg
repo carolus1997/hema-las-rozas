@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+	<rect width="100" height="100" fill="#F5F0E8"/>
+	<!-- Crossed swords -->
+	<g transform="translate(50, 50)">
+		<!-- Left sword -->
+		<line x1="-30" y1="30" x2="-10" y2="-30" stroke="#C4A84A" stroke-width="3" stroke-linecap="round"/>
+		<circle cx="-30" cy="30" r="3" fill="#C4A84A"/>
+		<rect x="-12" y="-35" width="4" height="8" fill="#C4A84A"/>
+
+		<!-- Right sword -->
+		<line x1="30" y1="30" x2="10" y2="-30" stroke="#C4A84A" stroke-width="3" stroke-linecap="round"/>
+		<circle cx="30" cy="30" r="3" fill="#C4A84A"/>
+		<rect x="8" y="-35" width="4" height="8" fill="#C4A84A"/>
+
+		<!-- Guard -->
+		<ellipse cx="0" cy="0" rx="8" ry="6" fill="none" stroke="#7B1F2E" stroke-width="2"/>
+	</g>
+</svg>

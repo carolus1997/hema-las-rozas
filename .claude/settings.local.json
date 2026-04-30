@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(mv peaceful-planet/* .)",
+      "Bash(mv peaceful-planet/.* .)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:4321)",
+      "Bash(cd E:\\\\\\\\Esgrimaweb)",
+      "Bash(ls *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Initial commit: HEMA Las Rozas website *)"
+    ]
+  }
+}

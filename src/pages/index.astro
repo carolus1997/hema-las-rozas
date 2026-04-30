@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import QueEsHema from '../components/QueEsHema.astro';
+import ArmasEstilos from '../components/ArmasEstilos.astro';
+import UneteAlEquipo from '../components/UneteAlEquipo.astro';
+import Contacto from '../components/Contacto.astro';
+---
+
+<Layout
+	title="HEMA Las Rozas - Artes Marciales Históricas Europeas"
+	description="Espada Larga, Ropera, Daga y Rodela en Las Rozas de Madrid. Únete al equipo de entrenamiento HEMA."
+>
+	<Hero />
+	<SectionDivider />
+	<QueEsHema />
+	<SectionDivider flip={true} />
+	<ArmasEstilos />
+	<SectionDivider />
+	<UneteAlEquipo />
+	<SectionDivider flip={true} />
+	<Contacto />
+</Layout>

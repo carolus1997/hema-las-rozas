@@ -1,0 +1,189 @@
+---
+import TimelineItem from './TimelineItem.astro';
+---
+
+<section id="que-son" class="que-es-hema">
+	<div class="section-container">
+		<h2>¿Qué son las HEMA?</h2>
+
+		<div class="content-grid">
+			<div class="prose-column">
+				<p>
+					HEMA significa <strong>Historical European Martial Arts</strong> — es decir, Artes Marciales Históricas Europeas. Se trata de la reconstrucción y práctica de sistemas de combate documentados en manuscritos medievales y renacentistas llamados <em>Fechtbücher</em> (en alemán) o <em>libros de combate</em> (en español).
+				</p>
+
+				<p>
+					A diferencia de la esgrima deportiva o la lucha teatral, las HEMA buscan la precisión histórica: entrenamos los mismos posturas, cortes y técnicas de lucha descritas por los maestros de armas en sus propios tratados. Cada movimiento tiene una fuente primaria — un manuscrito original que lo documenta con grabados y texto.
+				</p>
+
+				<p>
+					La disciplina experimentó un resurgimiento global desde los años 90, impulsada por investigadores y practicantes que tradujeron y testaron físicamente estos manuscritos. Hoy, las HEMA representan un puente fascinante entre la historia, la arqueología marcial y la práctica viva de la lucha.
+				</p>
+
+				<p>
+					El entrenamiento se basa en la evidencia: ninguna técnica entra en nuestro repertorio sin estar fundamentada en un documento histórico verificado.
+				</p>
+			</div>
+
+			<div class="timeline-column">
+				<TimelineItem
+					year="c. 1350"
+					title="Liechtenauer"
+					body="El primer sistema sistemático documentado: el maestro alemán Johannes Liechtenauer crea la tradición de la espada larga mediante versos cifrados (Merkversen) que codifican poses, paradas y ataques."
+				/>
+
+				<TimelineItem
+					year="c. 1410"
+					title="Fiore dei Liberi"
+					body="Flos Duellatorum — la obra maestra italiana ilustrada que cubre espada larga, poleaxe, lucha libre y daga. Fiore es el maestro que vinculó las tradiciones germánicas e italianas."
+				/>
+
+				<TimelineItem
+					year="1480–1600"
+					title="Escuela Alemana"
+					body="Florecimiento de tratados alemanes: Hans Talhoffer, Joachim Meyer y Paulus Hector Mair documentan sistemas exhaustivos con cientos de grabados. La tradición germánica se vuelve canónica."
+				/>
+
+				<TimelineItem
+					year="1569"
+					title="Destreza Española"
+					body="Jerónimo Sánchez de Carranza publica De la Filosofía de las Armas — el enfoque español matemático y filosófico de la esgrima. La Destreza se convierte en la teoría civil dominante de Europa."
+				/>
+
+				<TimelineItem
+					year="1600"
+					title="Pacheco de Narváez"
+					body="Luis Pacheco de Narváez perfecciona la Destreza en Grandeza de la Espada. La ropera ya domina los duelos civiles de toda Europa; la elegancia ibérica define el período tardío."
+				/>
+
+				<TimelineItem
+					year="c. 1700"
+					title="Transición al Florete"
+					body="Hacia 1700, la tradición manuscrita se desvanece en competiciones deportivas y esgrimistas de escuela. Las HEMA modernas preservan lo que casi se pierde para siempre."
+				/>
+			</div>
+		</div>
+
+		<div class="treatises-box">
+			<div class="treatises-ornament">❧</div>
+			<h3>Tratados clave</h3>
+			<ul class="treatises-list">
+				<li><em>Flos Duellatorum</em> — Fiore dei Liberi, c. 1410</li>
+				<li><em>Liber de Arte Gladiatoria</em> — Philippo Vadi, c. 1482</li>
+				<li><em>I.33: Ars Gladiatoria</em> — Anónimo alemán, c. 1300 (el primer manual europeo conocido)</li>
+				<li><em>De la Filosofía de las Armas</em> — Jerónimo Sánchez de Carranza, 1569</li>
+				<li><em>Grandeza de la Espada</em> — Luis Pacheco de Narváez, 1600</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.que-es-hema {
+		background-color: var(--color-bg-alt);
+	}
+
+	.section-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--section-padding);
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-8);
+		margin-bottom: var(--space-12);
+	}
+
+	@media (min-width: 768px) {
+		.content-grid {
+			grid-template-columns: 1.5fr 1fr;
+			align-items: start;
+		}
+	}
+
+	.prose-column {
+		max-width: 65ch;
+	}
+
+	.prose-column p {
+		margin-bottom: var(--space-4);
+		line-height: 1.7;
+	}
+
+	.prose-column strong {
+		font-weight: 600;
+		color: var(--color-accent);
+	}
+
+	.prose-column em {
+		font-style: italic;
+		color: var(--color-ink-muted);
+	}
+
+	.timeline-column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.treatises-box {
+		background-color: var(--color-surface);
+		border-left: 6px solid var(--color-gold);
+		padding: var(--space-6);
+		border-radius: var(--border-radius);
+		margin-top: var(--space-8);
+		position: relative;
+	}
+
+	.treatises-ornament {
+		font-size: 2rem;
+		color: var(--color-gold);
+		position: absolute;
+		top: -0.75rem;
+		left: var(--space-4);
+		line-height: 1;
+	}
+
+	.treatises-box h3 {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-lg);
+		color: var(--color-accent);
+		margin-bottom: var(--space-3);
+		margin-top: var(--space-2);
+		font-weight: 500;
+	}
+
+	.treatises-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.treatises-list li {
+		font-size: var(--font-size-sm);
+		color: var(--color-ink);
+		line-height: 1.6;
+	}
+
+	.treatises-list em {
+		font-style: italic;
+		color: var(--color-ink-muted);
+		font-weight: 500;
+	}
+
+	@media (max-width: 767px) {
+		.section-container {
+			padding: var(--space-8) var(--space-3);
+		}
+
+		.content-grid {
+			gap: var(--space-6);
+		}
+
+		.treatises-box {
+			padding: var(--space-4);
+		}
+	}
+</style>

@@ -1,0 +1,230 @@
+---
+---
+
+<section id="unete" class="unete-al-equipo">
+	<div class="section-container">
+		<h2>Únete al equipo</h2>
+
+		<div class="content-grid">
+			<div class="about-instructor">
+				<h3>Sobre el entrenador</h3>
+
+				<p>
+					Soy el único practicante activo de HEMA en Las Rozas de Madrid. Llevo años estudiando estas disciplinas de forma rigurosa — inicialmente de forma autodidacta a través de fuentes primarias, y posteriormente junto a instructores en otros clubs y ciudades.
+				</p>
+
+				<p>
+					Mi objetivo es simple: formar un grupo de entrenamiento colaborativo donde podamos practicar juntos, aprender del manuscritos originales, y disfrutar de este viaje histórico en la lucha marcial.
+				</p>
+
+				<p>
+					<strong>No busco un gimnasio.</strong> Busco personas con curiosidad histórica, respeto por la fuente, y ganas genuinas de aprender. El ambiente será sin ego, colaborativo, y siempre seguro.
+				</p>
+
+				<h3 style="margin-top: var(--space-8);">Ubicación</h3>
+
+				<p>
+					<strong>Las Rozas de Madrid</strong> — Área Metropolitana Noroeste
+				</p>
+
+				<p style="font-size: var(--font-size-sm); color: var(--color-ink-muted);">
+					Los entrenamientos se realizan en espacios exteriores e interiores según la temporada. Detalles exactos de la ubicación y horarios se proporcionan tras contacto inicial.
+				</p>
+
+				<a href="#contacto" class="cta-button">Escríbeme</a>
+			</div>
+
+			<aside class="first-session">
+				<h3>Qué esperar en tu primera sesión</h3>
+
+				<div class="checklist">
+					<div class="checklist-item">
+						<span class="checklist-number">1</span>
+						<p>
+							<strong>Introducción histórica</strong><br/>
+							Hablaremos sobre la historia de las HEMA, el período que estudiamos, y qué sistema entrenaremos.
+						</p>
+					</div>
+
+					<div class="checklist-item">
+						<span class="checklist-number">2</span>
+						<p>
+							<strong>Trabajo de footwork y postura</strong><br/>
+							Sin armas aún. Entenderás cómo se genera la potencia y la distancia correcta.
+						</p>
+					</div>
+
+					<div class="checklist-item">
+						<span class="checklist-number">3</span>
+						<p>
+							<strong>Primera arma</strong><br/>
+							Tu primer contacto será con un Federschwert (espada acolchada de entrenamiento) o una arma similar segura.
+						</p>
+					</div>
+
+					<div class="checklist-item">
+						<span class="checklist-number">4</span>
+						<p>
+							<strong>Seguridad total</strong><br/>
+							No hay requisitos previos de forma física o experiencia marcial. Progresamos juntos.
+						</p>
+					</div>
+				</div>
+
+				<div class="requirement-note">
+					<p>
+						<strong>Equipamiento inicial:</strong> Solo necesitas ropa deportiva cómoda. El instructor proporciona todo el material de inicio.
+					</p>
+				</div>
+			</aside>
+		</div>
+	</div>
+</section>
+
+<style>
+	.unete-al-equipo {
+		background-color: var(--color-bg-alt);
+	}
+
+	.section-container {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--section-padding);
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-8);
+		margin-top: var(--space-6);
+	}
+
+	@media (min-width: 768px) {
+		.content-grid {
+			grid-template-columns: 1.5fr 1fr;
+			align-items: start;
+		}
+	}
+
+	.about-instructor {
+		max-width: 65ch;
+	}
+
+	.about-instructor h3,
+	.first-session h3 {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-lg);
+		color: var(--color-accent);
+		margin-bottom: var(--space-4);
+		font-weight: 500;
+	}
+
+	.about-instructor p {
+		margin-bottom: var(--space-4);
+		line-height: 1.7;
+		font-size: var(--font-size-base);
+	}
+
+	.about-instructor strong {
+		font-weight: 600;
+		color: var(--color-accent);
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: var(--space-3) var(--space-6);
+		background-color: transparent;
+		border: 2px solid var(--color-accent);
+		color: var(--color-accent);
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-size: var(--font-size-base);
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		transition: all var(--transition-base);
+		border-radius: var(--border-radius);
+		margin-top: var(--space-4);
+	}
+
+	.cta-button:hover {
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		border-color: var(--color-accent-light);
+		box-shadow: 0 4px 12px rgba(123, 31, 46, 0.2);
+	}
+
+	.first-session {
+		background-color: var(--color-surface);
+		padding: var(--space-6);
+		border-left: 6px solid var(--color-gold);
+		border-radius: var(--border-radius);
+	}
+
+	.checklist {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		margin-bottom: var(--space-4);
+	}
+
+	.checklist-item {
+		display: flex;
+		gap: var(--space-3);
+	}
+
+	.checklist-number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		border-radius: 50%;
+		font-family: var(--font-heading);
+		font-weight: 600;
+		font-size: var(--font-size-sm);
+		flex-shrink: 0;
+	}
+
+	.checklist-item p {
+		font-size: var(--font-size-sm);
+		margin-bottom: 0;
+		line-height: 1.6;
+	}
+
+	.checklist-item strong {
+		display: block;
+		margin-bottom: 0.25rem;
+		color: var(--color-ink);
+	}
+
+	.requirement-note {
+		background-color: rgba(196, 168, 74, 0.1);
+		border: 1px solid var(--color-gold-muted);
+		padding: var(--space-3);
+		border-radius: var(--border-radius);
+		margin-top: var(--space-4);
+	}
+
+	.requirement-note p {
+		font-size: var(--font-size-sm);
+		margin-bottom: 0;
+		color: var(--color-ink);
+	}
+
+	@media (max-width: 767px) {
+		.section-container {
+			padding: var(--space-8) var(--space-3);
+		}
+
+		.content-grid {
+			gap: var(--space-6);
+		}
+
+		.first-session {
+			padding: var(--space-4);
+		}
+	}
+</style>

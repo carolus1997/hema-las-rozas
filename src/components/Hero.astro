@@ -1,0 +1,154 @@
+---
+---
+
+<section id="inicio" class="hero">
+	<div class="hero-content">
+		<h1 class="hero-title">HEMA Las Rozas</h1>
+
+		<div class="hero-divider">
+			<span class="hero-divider-line"></span>
+			<span class="hero-divider-ornament">◆</span>
+			<span class="hero-divider-line"></span>
+		</div>
+
+		<p class="hero-subtitle">Arte Marcial Histórica Europea</p>
+
+		<p class="hero-disciplines">
+			Espada Larga · Ropera · Daga y Rodela
+		</p>
+
+		<p class="hero-location">Las Rozas de Madrid</p>
+
+		<a href="#unete" class="cta-button">Únete al equipo</a>
+	</div>
+</section>
+
+<style>
+	.hero {
+		min-height: 100svh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding: var(--space-8) var(--space-4);
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: repeating-linear-gradient(
+			-45deg,
+			transparent,
+			transparent 50px,
+			rgba(106, 90, 75, 0.015) 50px,
+			rgba(106, 90, 75, 0.015) 100px
+		);
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		max-width: 800px;
+		animation: fadeInUp 1s ease forwards;
+	}
+
+	.hero-title {
+		font-size: var(--font-size-hero);
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		color: var(--color-ink);
+		margin-bottom: var(--space-6);
+		line-height: 1.1;
+	}
+
+	.hero-divider {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-3);
+		margin-bottom: var(--space-6);
+		height: 2rem;
+	}
+
+	.hero-divider-line {
+		display: block;
+		width: 3rem;
+		height: 1px;
+		background-color: var(--color-gold);
+	}
+
+	.hero-divider-ornament {
+		display: block;
+		font-size: var(--font-size-xl);
+		color: var(--color-gold);
+		font-weight: bold;
+		line-height: 1;
+	}
+
+	.hero-subtitle {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-2xl);
+		font-weight: 400;
+		color: var(--color-accent);
+		margin-bottom: var(--space-4);
+		letter-spacing: 0.05em;
+	}
+
+	.hero-disciplines {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-lg);
+		color: var(--color-ink);
+		margin-bottom: var(--space-3);
+		font-weight: 300;
+		letter-spacing: 0.03em;
+	}
+
+	.hero-location {
+		font-size: var(--font-size-md);
+		color: var(--color-ink-muted);
+		margin-bottom: var(--space-8);
+		font-weight: 300;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: var(--space-3) var(--space-6);
+		background-color: transparent;
+		border: 2px solid var(--color-accent);
+		color: var(--color-accent);
+		text-decoration: none;
+		font-family: var(--font-heading);
+		font-size: var(--font-size-base);
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		transition: all var(--transition-base);
+		border-radius: var(--border-radius);
+	}
+
+	.cta-button:hover {
+		background-color: var(--color-accent);
+		color: var(--color-surface);
+		border-color: var(--color-accent-light);
+		box-shadow: 0 4px 12px rgba(123, 31, 46, 0.2);
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(2rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

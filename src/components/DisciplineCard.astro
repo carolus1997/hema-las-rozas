@@ -1,0 +1,133 @@
+---
+interface Props {
+	title: string;
+	period: string;
+	tradition: string;
+	description: string;
+	why: string;
+	icon: string;
+}
+
+const { title, period, tradition, description, why, icon } = Astro.props;
+---
+
+<div class="discipline-card">
+	<div class="card-header">
+		<svg class="card-icon" viewBox="0 0 100 100" width="48" height="48">
+			<use href={`#${icon}`}></use>
+		</svg>
+	</div>
+
+	<h3 class="card-title">{title}</h3>
+
+	<div class="card-meta">
+		<span class="period-badge">{period}</span>
+		<span class="tradition-label">{tradition}</span>
+	</div>
+
+	<p class="card-description">{description}</p>
+
+	<p class="card-why"><em>{why}</em></p>
+</div>
+
+<style>
+	.discipline-card {
+		background-color: var(--color-surface);
+		border-top: var(--border-thick);
+		padding: var(--space-6);
+		border-radius: var(--border-radius);
+		transition: all var(--transition-base);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+		height: 100%;
+	}
+
+	.discipline-card:hover {
+		transform: translateY(-0.25rem);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: center;
+		margin-bottom: var(--space-2);
+	}
+
+	.card-icon {
+		color: var(--color-gold);
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.card-title {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-lg);
+		color: var(--color-accent);
+		font-weight: 600;
+		margin-bottom: var(--space-2);
+	}
+
+	.card-meta {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--space-2);
+		margin-bottom: var(--space-2);
+	}
+
+	.period-badge {
+		display: inline-block;
+		background-color: var(--color-gold);
+		color: var(--color-bg);
+		padding: 0.25rem var(--space-2);
+		border-radius: 999px;
+		font-size: var(--font-size-xs);
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.tradition-label {
+		font-size: var(--font-size-xs);
+		color: var(--color-ink-muted);
+		font-weight: 500;
+		font-style: italic;
+	}
+
+	.card-description {
+		font-size: var(--font-size-sm);
+		color: var(--color-ink);
+		line-height: 1.6;
+		margin-bottom: var(--space-2);
+		flex-grow: 1;
+	}
+
+	.card-why {
+		font-size: var(--font-size-sm);
+		color: var(--color-ink-muted);
+		font-style: italic;
+		line-height: 1.5;
+		margin-bottom: 0;
+		border-top: 1px solid var(--color-gold-muted);
+		padding-top: var(--space-3);
+	}
+
+	.card-why em {
+		font-style: normal;
+		color: var(--color-accent);
+		font-weight: 500;
+	}
+
+	@media (max-width: 767px) {
+		.discipline-card {
+			padding: var(--space-4);
+		}
+
+		.card-icon {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+</style>

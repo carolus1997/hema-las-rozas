@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import '../styles/animations.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = 'HEMA Las Rozas', description = 'Artes Marciales Históricas Europeas — Espada Larga, Ropera, Daga y Rodela en Las Rozas de Madrid' } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+
+		<!-- Preconnect to Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="HEMA Las Rozas" />
+
+		<!-- Weapon icons as SVG symbols (referenced via <use>) -->
+		<svg style="display: none;">
+			<defs>
+				<!-- Crossed swords for longsword -->
+				<symbol id="icon-longsword" viewBox="0 0 100 100">
+					<path d="M 30 70 L 50 20 L 70 70 M 35 65 L 65 65 M 50 50 L 50 30"
+						stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+				</symbol>
+
+				<!-- Rapier/estoque -->
+				<symbol id="icon-rapier" viewBox="0 0 100 100">
+					<path d="M 50 10 L 50 80 M 40 30 L 60 30 M 45 25 L 55 25"
+						stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+				</symbol>
+
+				<!-- Shield and dagger -->
+				<symbol id="icon-shield" viewBox="0 0 100 100">
+					<path d="M 50 15 L 35 30 L 35 65 Q 50 75 50 75 Q 50 75 65 65 L 65 30 Z"
+						stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round" />
+					<path d="M 45 50 L 55 50 M 50 45 L 50 55"
+						stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+				</symbol>
+			</defs>
+		</svg>
+	</head>
+
+	<body>
+		<Nav />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<script defer src="../scripts/main.js"></script>
+	</body>
+</html>
+
+<style>
+	main {
+		min-height: 100vh;
+	}
+</style>
