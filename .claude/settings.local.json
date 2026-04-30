@@ -29,7 +29,13 @@
       "Bash(curl -s http://localhost:4325/ropera)",
       "Bash(curl -s http://localhost:4325/daga-de-rodela)",
       "Bash(git commit *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "Bash(git push *)",
+      "Bash(mkdir -p \"E:/Esgrimaweb/public/images/meyer\")",
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_13_40.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-hauwen-XII.png\")",
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_13_57.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-handfarbelt-XVII.png\")",
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_17_19.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-dritte-schwert-LVI.png\")",
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_25_01.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-legern-VI.png\")"
     ]
   }
 }
