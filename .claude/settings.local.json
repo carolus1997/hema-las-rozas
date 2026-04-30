@@ -35,7 +35,12 @@
       "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_13_40.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-hauwen-XII.png\")",
       "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_13_57.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-handfarbelt-XVII.png\")",
       "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_17_19.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-dritte-schwert-LVI.png\")",
-      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_25_01.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-legern-VI.png\")"
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/ChatGPT Image 30 abr 2026, 12_25_01.png\" \"E:/Esgrimaweb/public/images/meyer/meyer-legern-VI.png\")",
+      "Bash(where pdftotext *)",
+      "Bash(where pdftoppm *)",
+      "Bash(where mutool *)",
+      "Bash(where gs *)",
+      "Bash(\"/c/Program Files/Git/mingw64/bin/pdftotext.exe\" \"C:/Users/usuario/Downloads/Esgrima/Esgrima/PlanchasMeyer/Meyer-Longsword-Worksbook-v0.7.pdf\" -)"
     ]
   }
 }
