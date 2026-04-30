@@ -11,7 +11,15 @@
       "Bash(ls *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'Initial commit: HEMA Las Rozas website *)"
+      "Bash(git commit -m 'Initial commit: HEMA Las Rozas website *)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(git commit -m 'Add Netlify config and documentation *)",
+      "Bash(netlify login *)",
+      "PowerShell(python -c $pyScript)",
+      "Bash(mkdir -p public/images)",
+      "Bash(cp \"C:/Users/usuario/Downloads/Esgrima/Okanaga-Combat-Guild-Martial-Arts-Kelowna-The-Art-of-Combat-Joachim-Meyer-Longsword-1.jpg\" public/images/meyer-longsword.jpg)",
+      "Bash(git commit -m 'Add Meyer woodcut image and enrich HEMA content *)"
     ]
   }
 }

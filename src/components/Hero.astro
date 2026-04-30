@@ -2,24 +2,40 @@
 ---
 
 <section id="inicio" class="hero">
-	<div class="hero-content">
-		<h1 class="hero-title">HEMA Las Rozas</h1>
+	<div class="hero-inner">
+		<div class="hero-content">
+			<h1 class="hero-title">HEMA Las Rozas</h1>
 
-		<div class="hero-divider">
-			<span class="hero-divider-line"></span>
-			<span class="hero-divider-ornament">◆</span>
-			<span class="hero-divider-line"></span>
+			<div class="hero-divider">
+				<span class="hero-divider-line"></span>
+				<span class="hero-divider-ornament">◆</span>
+				<span class="hero-divider-line"></span>
+			</div>
+
+			<p class="hero-subtitle">Arte Marcial Histórica Europea</p>
+
+			<p class="hero-disciplines">
+				Espada Larga · Ropera · Daga de Rodela
+			</p>
+
+			<p class="hero-location">Las Rozas de Madrid</p>
+
+			<a href="#unete" class="cta-button">Únete al equipo</a>
 		</div>
 
-		<p class="hero-subtitle">Arte Marcial Histórica Europea</p>
-
-		<p class="hero-disciplines">
-			Espada Larga · Ropera · Daga y Rodela
-		</p>
-
-		<p class="hero-location">Las Rozas de Madrid</p>
-
-		<a href="#unete" class="cta-button">Únete al equipo</a>
+		<figure class="hero-image-wrap">
+			<img
+				src="/images/meyer-longsword.jpg"
+				alt="Grabado de combatientes con espada larga, de El Arte del Combate de Joachim Meyer (1570)"
+				class="hero-image"
+				width="1024"
+				height="686"
+				loading="eager"
+			/>
+			<figcaption class="hero-image-caption">
+				Joachim Meyer · <em>El Arte del Combate</em> · 1570
+			</figcaption>
+		</figure>
 	</div>
 </section>
 
@@ -28,35 +44,29 @@
 		min-height: 100svh;
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		position: relative;
 		padding: var(--space-8) var(--space-4);
-		text-align: center;
 		overflow: hidden;
 	}
 
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-image: repeating-linear-gradient(
-			-45deg,
-			transparent,
-			transparent 50px,
-			rgba(106, 90, 75, 0.015) 50px,
-			rgba(106, 90, 75, 0.015) 100px
-		);
-		pointer-events: none;
-		z-index: 1;
+	.hero-inner {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-8);
+		align-items: center;
+	}
+
+	@media (min-width: 768px) {
+		.hero-inner {
+			grid-template-columns: 1fr 1fr;
+			gap: var(--space-12);
+		}
 	}
 
 	.hero-content {
-		position: relative;
-		z-index: 2;
-		max-width: 800px;
 		animation: fadeInUp 1s ease forwards;
 	}
 
@@ -71,7 +81,6 @@
 
 	.hero-divider {
 		display: flex;
-		justify-content: center;
 		align-items: center;
 		gap: var(--space-3);
 		margin-bottom: var(--space-6);
@@ -139,6 +148,58 @@
 		color: var(--color-surface);
 		border-color: var(--color-accent-light);
 		box-shadow: 0 4px 12px rgba(123, 31, 46, 0.2);
+	}
+
+	/* Image column */
+	.hero-image-wrap {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		animation: fadeInUp 1.2s ease forwards;
+		border: var(--border-thin);
+		background-color: var(--color-surface);
+		padding: var(--space-2);
+	}
+
+	.hero-image {
+		width: 100%;
+		height: auto;
+		display: block;
+		filter: sepia(15%) contrast(1.05);
+	}
+
+	.hero-image-caption {
+		font-family: var(--font-heading);
+		font-size: var(--font-size-xs);
+		color: var(--color-ink-muted);
+		font-style: normal;
+		text-align: center;
+		padding: var(--space-2) 0 var(--space-1);
+		letter-spacing: 0.03em;
+	}
+
+	.hero-image-caption em {
+		font-style: italic;
+	}
+
+	/* Mobile: image goes below text */
+	@media (max-width: 767px) {
+		.hero {
+			padding: var(--space-6) var(--space-3);
+		}
+
+		.hero-image-wrap {
+			order: -1;
+			max-height: 280px;
+			overflow: hidden;
+		}
+
+		.hero-image {
+			object-fit: cover;
+			object-position: top;
+			max-height: 260px;
+		}
 	}
 
 	@keyframes fadeInUp {
