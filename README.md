@@ -1,43 +1,103 @@
-# Astro Starter Kit: Minimal
+# HEMA Las Rozas
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web para introducir las Artes Marciales Históricas Europeas (HEMA) en Las Rozas de Madrid. Especializado en Espada Larga, Ropera y Daga & Rodela.
+
+## Estética
+
+**"Renacentista limpio"** — fondo crema/marfil (#F5F0E8), acentos en borgoña (#7B1F2E), oro antiguo (#C4A84A) y negro cálido (#1A1008). Tipografía serif fina (Cormorant Garamond + Lora). Período de referencia: Baja Edad Media → Barroco (~1350–1700).
+
+## Stack
+
+- **Astro** v6 — static site generator
+- **CSS puro** — custom properties, sin frameworks
+- **JavaScript vanilla** — smooth scroll, nav interactivo, hamburger móvil
+- **Netlify Forms** — formulario de contacto
+- **Responsive** — mobile-first, 100% fluid
+
+## Estructura
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── layouts/Layout.astro          # Shell HTML, <head>, fonts
+│   ├── components/
+│   │   ├── Nav.astro                 # Sticky nav + hamburger
+│   │   ├── Hero.astro                # Portada
+│   │   ├── QueEsHema.astro           # Historia + timeline
+│   │   ├── TimelineItem.astro        # Componente timeline reutilizable
+│   │   ├── ArmasEstilos.astro        # Tres disciplinas
+│   │   ├── DisciplineCard.astro      # Card reutilizable
+│   │   ├── UneteAlEquipo.astro       # Sobre el instructor
+│   │   ├── Contacto.astro            # Formulario Netlify
+│   │   ├── Footer.astro              # Footer
+│   │   └── SectionDivider.astro      # Divisor SVG
+│   ├── pages/index.astro             # Página principal
+│   ├── scripts/main.js               # Interactividad
+│   └── styles/
+│       ├── global.css                # Tokens + reset
+│       └── animations.css            # Keyframes
+├── public/favicon.svg                # Logo espadas cruzadas
+├── netlify.toml                      # Config Netlify
+└── astro.config.mjs                  # Config Astro
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Secciones
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Hero** — Portada con título, disciplinas, CTA
+2. **¿Qué son las HEMA?** — Historia desde Liechtenauer (1350) hasta Barroco (1700), timeline, tratados clave
+3. **Armas y Estilos** — Espada Larga, Ropera, Daga y Rodela (cards con descripción)
+4. **Únete al equipo** — Sobre el instructor, localización, qué esperar en primera sesión
+5. **Contacto** — Formulario Netlify Forms
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Desarrollo
 
-## 🧞 Commands
+```bash
+npm install
+npm run dev          # Dev server en http://localhost:4321
+npm run build        # Build para producción (→ dist/)
+npm run preview      # Preview local del build
+```
 
-All commands are run from the root of the project, from a terminal:
+## Deploy
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Opción 1: Netlify CLI (rápido)
+```bash
+npm install -g netlify-cli
+netlify login
+netlify init
+netlify deploy --prod
+```
 
-## 👀 Want to learn more?
+### Opción 2: GitHub + Netlify (recomendado)
+1. Push a GitHub
+2. Conectar repo en Netlify dashboard
+3. Build command: `npm run build` | Publish: `dist`
+4. Netlify detecta `netlify.toml` automáticamente
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Features
+
+✅ Navegación sticky con subrayado activo  
+✅ Menú hamburger responsivo (mobile)  
+✅ Scroll suave (anchor links)  
+✅ Timeline visual con marcadores  
+✅ Cards de disciplinas con hover effect  
+✅ Formulario Netlify Forms integrado  
+✅ Ornamentos CSS (sin imágenes): líneas, diamantes, fleurones  
+✅ Google Fonts preconnect  
+✅ Meta tags OpenGraph  
+✅ Favicon SVG personalizado  
+✅ Build rápido (~2.4s)  
+
+## Notas
+
+- Todo el sitio es **estático** (HTML puro generado)
+- No requiere backend — Netlify Forms maneja el email
+- CSS variables centralizadas para fácil ajuste de colores/espaciado
+- Sin dependencias externas (excepto Google Fonts)
+- Performance-optimized: Lighthouse-ready
+
+---
+
+**Creado:** 2026-04-30  
+**Autor:** HEMA Las Rozas  
+**Contacto:** charlyp1397@gmail.com
